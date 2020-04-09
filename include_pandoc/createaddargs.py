@@ -48,7 +48,7 @@ def create_addargs():
     with open('addargs.py', 'w') as o:
         o.write(wpre)
         for rline in rlines:
-            if rline.startswith('pandoc'):
+            if not rline.strip().startswith('-'):
                 continue
             dirty_items = []
             for x in rline.strip().split("  "):
